@@ -9,7 +9,10 @@ Check the Manifest file called 'manifest.yml' under the folder **-auto. It has t
 
    services:
       - mydb
-   
+```diff
++ this will be highlighted in green
+- this will be highlighted in red
+```
 ###### Note: You will create a service on your PCF Org with Name "mydb" that will be of type Mysql.
 
 == 2. Use Java Environment properties. See cf-db-services-sample-props folder
