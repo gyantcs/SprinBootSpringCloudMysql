@@ -7,11 +7,9 @@ which reconfigures the service connectivity appropriately.
 
 Check the Manifest file called 'manifest.yml' under the folder **-auto. It has the service that this App will bind to that is picked up by the Spring Auto connector with this line. 
 
-  
-      - mydb
 ```diff
 +  services:
-- - mydb
+-  mydb
 ```
 ###### Note: You will create a service on your PCF Org with Name "mydb" that will be of type Mysql.
 
