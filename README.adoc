@@ -6,7 +6,7 @@ Cloud Foundry's Java Buildpack injects a library called the https://github.com/c
 which reconfigures the service connectivity appropriately.
 
 Check the Manifest file called 'manifest.yml' under the folder **-auto. It has the service that this App will bind to that is picked up by the Spring Auto connector with this line. 
-```
+```diff
    + services:
      + - mydb
 ```    
