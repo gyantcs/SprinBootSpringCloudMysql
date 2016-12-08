@@ -26,10 +26,29 @@ Check the Manifest file called 'manifest.yml' under the folder **-auto. It has t
 Spring Boot exposes the VCAP_SERVICES properties which is in the form of a JSON into a more consumable format - as simple environment properties. These properties can be used for configuring
 the connectivity to the service
 
-== 3. Use Spring Cloud Connector. See  
+== 3. Use Spring Cloud Connector. 
 
 ```diff
-+ cf-db-services-sample-connector folder. 
++ See cf-db-services-sample-connector folder. 
+```
+
+```pytoon
+@Configuration
+@Profile("cloud")
+public  class CloudFoundryDatabaseConfig {
+
+    @Bean
+    public Cloud cloud() {
+        return new CloudFactory().getCloud();
+    }
+
+    @Bean
+    public DataSource dataSource() {
+        DataSource dataSource = cloud().getServiceConnector("mydb", DataSource.class, null);
+        return dataSource;
+    }
+}
+
 ```
 http://cloud.spring.io/spring-cloud-connectors/[Spring Cloud Connector] provides the most advanced configuration for enabling connectivity to an external service.
 
