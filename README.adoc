@@ -3,7 +3,7 @@ Spring Boot Mysql app to demonstrate 3 different ways of configuration on Pivota
 == 1. Let Java Buildpack Autoreconfiguration handle it. 
 
 ```diff
-See cf-db-services-sample-auto folder
++ See cf-db-services-sample-auto folder
 ```
 
 The simplest approach is to do nothing and let Cloud Foundry's Java Buildpack handle the details.
