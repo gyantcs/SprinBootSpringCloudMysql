@@ -1,6 +1,11 @@
 Spring Boot Mysql app to demonstrate 3 different ways of configuration on Pivotal Cloud Foundry
 
-== 1. Let Java Buildpack Autoreconfiguration handle it. See cf-db-services-sample-auto folder
+== 1. Let Java Buildpack Autoreconfiguration handle it. 
+
+```diff
+See cf-db-services-sample-auto folder
+```
+
 The simplest approach is to do nothing and let Cloud Foundry's Java Buildpack handle the details.
 Cloud Foundry's Java Buildpack injects a library called the https://github.com/cloudfoundry/java-buildpack-auto-reconfiguration[Java Buildpack Auto Reconfiguration] into the runtime deployable
 which reconfigures the service connectivity appropriately.
