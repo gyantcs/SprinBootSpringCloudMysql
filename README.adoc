@@ -1,15 +1,22 @@
-Spring Boot Mysql app to demonstrate 3 different ways of configuration
+Spring Boot Mysql app to demonstrate 3 different ways of configuration on Pivotal Cloud Foundry
 
-== 1. Let Java Buildpack Autoreconfiguration handle it
+== 1. Let Java Buildpack Autoreconfiguration handle it. See cf-db-services-sample-auto folder
 The simplest approach is to do nothing and let Cloud Foundry's Java Buildpack handle the details.
 Cloud Foundry's Java Buildpack injects a library called the https://github.com/cloudfoundry/java-buildpack-auto-reconfiguration[Java Buildpack Auto Reconfiguration] into the runtime deployable
 which reconfigures the service connectivity appropriately.
 
-== 2. Use Java Environment properties
+Check the Manifest file called 'manifest.yml' under the folder **-auto. It has the service that this App will bind to that is picked up by the Spring Auto connector with this line. 
+
+    services:
+      - mydb
+      
+###### Note: You will create a service on your PCF Org with Name "mydb" that will be of type Mysql.
+
+== 2. Use Java Environment properties. See cf-db-services-sample-props folder
 Spring Boot exposes the VCAP_SERVICES properties which is in the form of a JSON into a more consumable format - as simple environment properties. These properties can be used for configuring
 the connectivity to the service
 
-== 3. Use Spring Cloud Connector
+== 3. Use Spring Cloud Connector. See  cf-db-services-sample-connector folder. 
 http://cloud.spring.io/spring-cloud-connectors/[Spring Cloud Connector] provides the most advanced configuration for enabling connectivity to an external service.
 
 Any of the versions of the application can be brought up by the following steps:
